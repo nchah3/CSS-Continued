@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Page information: the title appears in the browser tab. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Nihal Chahal">
+    <meta name="description" content="A CSS Flexbox demo showing link spacing, hover effects, and a responsive menu.">
+    <title>CSS Flexbox Demo | Nihal Chahal</title>
+
+    <style>
+      /* The navigation is the flex container; its links are flex items. */
+      .menu {
+        display: flex;
+        /* Distribute remaining space around the links. */
+        justify-content: space-around;
+        /* Keep at least 25px between neighboring links. */
+        gap: 25px;
+      }
+
+      /* Style only the links that are direct children of the menu. */
+      .menu > a {
+        color: green;
+        font-family: sans-serif;
+        font-size: 24px;
+        text-decoration: none;
+      }
+
+      /* Change the color and add a bottom border when a link is hovered. */
+      .menu > a:hover {
+        color: hsl(160, 70%, 50%);
+        border-bottom: 2px solid hsl(160, 70%, 50%);
+      }
+
+      /* At viewport widths of 400px or less, stack and center the links.
+         The 25px gap now separates the links vertically. */
+      @media (max-width: 400px) {
+        .menu {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Resize the preview to compare the row and column layouts.
+         Hover over a link to see its color and border change. -->
+    <nav class="menu" aria-label="Media categories">
+      <!-- These are demo links; # is a placeholder destination. -->
+      <a href="#">music</a>
+      <a href="#">photos</a>
+      <a href="#">videos</a>
+      <a href="#">texts</a>
+    </nav>
+  </body>
+</html>
